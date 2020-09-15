@@ -1,7 +1,7 @@
 import React from 'react'
 import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 import {
-  NoEthereumProviderError,
+  NoConfluxProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected
 } from '@web3-react/injected-connector'
 import { UserRejectedRequestError as UserRejectedRequestErrorWalletConnect } from '@web3-react/walletconnect-connector'
@@ -60,7 +60,7 @@ const connectorsByName: { [connectorName in ConnectorNames]: any } = {
 }
 
 function getErrorMessage(error: Error) {
-  if (error instanceof NoEthereumProviderError) {
+  if (error instanceof NoConfluxProviderError) {
     return 'No Ethereum browser extension detected, install MetaMask on desktop or visit from a dApp browser on mobile.'
   } else if (error instanceof UnsupportedChainIdError) {
     return "You're connected to an unsupported network."

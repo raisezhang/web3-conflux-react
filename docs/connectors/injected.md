@@ -1,16 +1,17 @@
-# `web3-react` Documentation - Injected
+# `web3-conflux-react` Documentation - Injected
 
-- [Install](#install)
-- [Arguments](#arguments)
-- [Example](#example)
-- [Errors](#errors)
-  - [NoEthereumProviderError](#noethereumprovidererror)
-    - [Example](#example-1)
-  - [UserRejectedRequestError](#userrejectedrequesterror)
-    - [Example](#example-2)
+- [`web3-conflux-react` Documentation - Injected](#web3-conflux-react-documentation---injected)
+  - [Install](#install)
+  - [Arguments](#arguments)
+  - [Example](#example)
+  - [Errors](#errors)
+    - [NoConfluxProviderError](#noconfluxprovidererror)
+      - [Example](#example-1)
+    - [UserRejectedRequestError](#userrejectedrequesterror)
+      - [Example](#example-2)
 
 ## Install
-`yarn add @web3-react/injected-connector`
+`yarn add @web3-conflux-react/injected-connector`
 
 ## Arguments
 ```typescript
@@ -19,22 +20,22 @@ supportedChainIds?: number[]
 
 ## Example
 ```javascript
-import { InjectedConnector } from '@web3-react/injected-connector'
+import { InjectedConnector } from '@web3-conflux-react/injected-connector'
 
-const injected = new InjectedConnector({ supportedChainIds: [1, 3, 4, 5, 42] })
+const injected = new InjectedConnector({ supportedChainIds: [1, 2] })
 ```
 
 ## Errors
 
-### NoEthereumProviderError
+### NoConfluxProviderError
 
 #### Example
 ```javascript
-import { NoEthereumProviderError } from '@web3-react/injected-connector'
+import { NoConfluxProviderError } from '@web3-conflux-react/injected-connector'
 
 function Component () {
   const { error } = useWeb3React()
-  const isNoEthereumProviderError = error instanceof NoEthereumProviderError
+  const isNoConfluxProviderError = error instanceof NoConfluxProviderError
   // ...
 }
 ```
@@ -43,7 +44,7 @@ function Component () {
 
 #### Example
 ```javascript
-import { UserRejectedRequestError } from '@web3-react/injected-connector'
+import { UserRejectedRequestError } from '@web3-conflux-react/injected-connector'
 
 function Component () {
   const { error } = useWeb3React()

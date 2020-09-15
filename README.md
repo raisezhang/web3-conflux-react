@@ -1,4 +1,4 @@
-# `web3-react` 🧰
+# `web3-conflux-react` 🧰
 
 _A simple, maximally extensible, dependency minimized framework for building modern [Ethereum dApps](https://ethereum.org/beginners/)_
 
@@ -61,7 +61,7 @@ _Open a PR to add your project to the list!_
 ## Local Development
 
 - Clone repo\
-  `git clone https://github.com/NoahZinsmeister/web3-react.git`
+  `git clone https://github.com/raisezhang/web3-conflux-react.git`
 
 - Install top-level dependencies\
   `yarn`

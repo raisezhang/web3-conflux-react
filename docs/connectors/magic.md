@@ -39,7 +39,7 @@ import { UserRejectedRequestError } from '@web3-react/magic-connector'
 
 function Component() {
   const { error } = useWeb3React()
-  const isNoEthereumProviderError = error instanceof UserRejectedRequestError
+  const isNoConfluxProviderError = error instanceof UserRejectedRequestError
   // ...
 }
 ```
@@ -55,7 +55,7 @@ import { FailedVerificationError } from '@web3-react/magic-connector'
 
 function Component() {
   const { error } = useWeb3React()
-  const isNoEthereumProviderError = error instanceof FailedVerificationError
+  const isNoConfluxProviderError = error instanceof FailedVerificationError
   // ...
 }
 ```
@@ -71,7 +71,7 @@ import { MagicLinkRateLimitError } from '@web3-react/magic-connector'
 
 function Component() {
   const { error } = useWeb3React()
-  const isNoEthereumProviderError = error instanceof MagicLinkRateLimitError
+  const isNoConfluxProviderError = error instanceof MagicLinkRateLimitError
   // ...
 }
 ```
@@ -87,7 +87,7 @@ import { MagicLinkExpiredError } from '@web3-react/magic-connector'
 
 function Component() {
   const { error } = useWeb3React()
-  const isNoEthereumProviderError = error instanceof MagicLinkExpiredError
+  const isNoConfluxProviderError = error instanceof MagicLinkExpiredError
   // ...
 }
 ```
