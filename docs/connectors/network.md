@@ -1,8 +1,9 @@
 # `web3-react` Documentation - Network
 
-- [Install](#install)
-- [Arguments](#arguments)
-- [Example](#example)
+- [`web3-react` Documentation - Network](#web3-react-documentation---network)
+  - [Install](#install)
+  - [Arguments](#arguments)
+  - [Example](#example)
 
 ## Install
 `yarn add @web3-react/network-connector`
