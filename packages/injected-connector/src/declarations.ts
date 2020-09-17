@@ -7,6 +7,7 @@ interface Conflux {
 
 declare interface Window {
   conflux?: Conflux
+  confluxJS?: any
 }
 
 declare const __DEV__: boolean
