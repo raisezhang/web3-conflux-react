@@ -38,7 +38,7 @@ export class InjectedConnector extends AbstractConnector {
     if (__DEV__) {
       console.log("Handling 'chainChanged' event with payload", chainId)
     }
-    this.emitUpdate({ chainId, provider: window.confluxJS })
+    this.emitUpdate({ chainId, provider: window.conflux })
   }
 
   private handleAccountsChanged(accounts: string[]): void {
@@ -63,7 +63,7 @@ export class InjectedConnector extends AbstractConnector {
     if (__DEV__) {
       console.log("Handling 'networkChanged' event with payload", networkId)
     }
-    this.emitUpdate({ chainId: networkId, provider: window.confluxJS })
+    this.emitUpdate({ chainId: networkId, provider: window.conflux })
   }
 
   public async activate(): Promise<ConnectorUpdate> {
@@ -105,7 +105,7 @@ export class InjectedConnector extends AbstractConnector {
   }
 
   public async getProvider(): Promise<any> {
-    return window.confluxJS
+    return window.conflux
   }
 
   public async getChainId(): Promise<number | string> {
