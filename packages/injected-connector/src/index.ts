@@ -2,7 +2,7 @@ import { AbstractConnectorArguments, ConnectorUpdate } from '@web3-react/types'
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import warning from 'tiny-warning'
 
-import { SendReturnResult, SendReturn, Send, SendOld } from './types'
+import { SendReturnResult, SendReturn, SendOld } from './types'
 
 function parseSendReturn(sendReturn: SendReturnResult | SendReturn): any {
   return sendReturn.hasOwnProperty('result') ? sendReturn.result : sendReturn
@@ -82,17 +82,17 @@ export class InjectedConnector extends AbstractConnector {
       ;(window.conflux as any).autoRefreshOnNetworkChange = false
     }
 
-    // try to activate + get account via cfx_requestAccounts
+    // try to activate + get account via cfx_accounts
     let account
     try {
-      account = await (window.conflux.send as Send)('cfx_requestAccounts').then(
+      account = await (window.conflux.send as SendOld)({ method: 'cfx_accounts' }).then(
         sendReturn => parseSendReturn(sendReturn)[0]
       )
     } catch (error) {
       if ((error as any).code === 4001) {
         throw new UserRejectedRequestError()
       }
-      warning(false, 'cfx_requestAccounts was unsuccessful, falling back to enable')
+      warning(false, 'cfx_accounts was unsuccessful, falling back to enable')
     }
 
     // if unsuccessful, try enable
@@ -115,25 +115,9 @@ export class InjectedConnector extends AbstractConnector {
 
     let chainId
     try {
-      chainId = await (window.conflux.send as Send)('cfx_chainId').then(parseSendReturn)
+      chainId = parseSendReturn((window.conflux.send as SendOld)({ method: 'net_version' }))
     } catch {
-      warning(false, 'cfx_chainId was unsuccessful, falling back to net_version')
-    }
-
-    if (!chainId) {
-      try {
-        chainId = await (window.conflux.send as Send)('net_version').then(parseSendReturn)
-      } catch {
-        warning(false, 'net_version was unsuccessful, falling back to net version v2')
-      }
-    }
-
-    if (!chainId) {
-      try {
-        chainId = parseSendReturn((window.conflux.send as SendOld)({ method: 'net_version' }))
-      } catch {
-        warning(false, 'net_version v2 was unsuccessful, falling back to manual matches and static properties')
-      }
+      warning(false, 'net_version v2 was unsuccessful, falling back to manual matches and static properties')
     }
 
     if (!chainId) {
@@ -158,7 +142,7 @@ export class InjectedConnector extends AbstractConnector {
 
     let account
     try {
-      account = await (window.conflux.send as Send)('cfx_accounts').then(sendReturn => parseSendReturn(sendReturn)[0])
+      account = await (window.conflux.send as SendOld)({ method: 'cfx_accounts' }).then(sendReturn => parseSendReturn(sendReturn)[0])
     } catch {
       warning(false, 'cfx_accounts was unsuccessful, falling back to enable')
     }
@@ -193,7 +177,7 @@ export class InjectedConnector extends AbstractConnector {
     }
 
     try {
-      return await (window.conflux.send as Send)('cfx_accounts').then(sendReturn => {
+      return await (window.conflux.send as SendOld)({ method: 'cfx_accounts' }).then(sendReturn => {
         if (parseSendReturn(sendReturn).length > 0) {
           return true
         } else {
