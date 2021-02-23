@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/core",
+  "name": "@web3-conflux-react/core",
   "publishConfig": {
     "access": "public"
   },
@@ -17,10 +17,10 @@
     "frontend",
     "dapp"
   ],
-  "author": "Noah Zinsmeister <noahwz@gmail.com>",
+  "author": "raisezhang <raisezhang@hotmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/NoahZinsmeister/web3-react.git"
+    "url": "git://github.com/raisezhang/web3-conflux-react.git"
   },
   "main": "dist/index.js",
   "module": "dist/core.esm.js",

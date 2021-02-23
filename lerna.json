@@ -9,6 +9,6 @@
     }
   },
   "packages": [
-    "packages/injected-connector"
+    "packages/core"
   ]
 }
