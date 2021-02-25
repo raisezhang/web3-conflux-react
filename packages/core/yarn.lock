@@ -2,25 +2,25 @@
 # yarn lockfile v1
 
 
-"@ethersproject/bytes@^5.0.0":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@ethersproject/bytes/-/bytes-5.0.1.tgz#da8cd9b3e3b2800be9b46fda7036fc441b334680"
-  integrity sha512-Y198536UW9Jb9RBXuqmCsCa9mYJUsxJn+5aGr2XjNMpLBc6vEn/44GHnbQXYgRCzh4rnWtJ9bTgSwDjme9Hgnw==
+"@confluxproject/bytes@^5.0.4":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@confluxproject/bytes/-/bytes-5.0.8.tgz#2649519fc1c095046fcb61c7e88f174404fd166d"
+  integrity sha512-t3FlS1OU7QpDO/vybSZqDZwqYO9+eS+qHB+iK1Y77gRqBgck9vqVZabRyBmuv0wEKO0KBB7Adq2cuJm9Mj3qtg==
   dependencies:
-    "@ethersproject/logger" "^5.0.0"
+    "@confluxproject/logger" "^5.0.5"
 
-"@ethersproject/keccak256@^5.0.0-beta.130":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@ethersproject/keccak256/-/keccak256-5.0.1.tgz#be91c11a8bdf4e94c8b900502d2a46b223fbdeb3"
-  integrity sha512-AtFm/4qHRQUvZcG3WYmaT7zV79dz72+N01w0XphcIBaD/7UZXyW85Uf08sirVlckHmh9fvc4UDWyHiroKsBT6Q==
+"@confluxproject/keccak256@^5.0.6":
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/@confluxproject/keccak256/-/keccak256-5.0.6.tgz#0c121185d2cc1befc2d9af550710682f88cddf39"
+  integrity sha512-a5rj+QSJGCB4TPfFBcCzEprEmxLBAVlJg69u6Xxzgh4ugTBv/B6vURFQ3uU+G/qhBmdwpgz1Vdx+tJD2RvWqRg==
   dependencies:
-    "@ethersproject/bytes" "^5.0.0"
+    "@confluxproject/bytes" "^5.0.4"
     js-sha3 "0.5.7"
 
-"@ethersproject/logger@^5.0.0":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@ethersproject/logger/-/logger-5.0.2.tgz#f24aa14a738a428d711c1828b44d50114a461b8b"
-  integrity sha512-NQe3O1/Nwkcp6bto6hsTvrcCeR/cOGK+RhOMn0Zi2FND6gdWsf1g+5ie8gQ1REqDX4MTGP/Y131dZas985ls/g==
+"@confluxproject/logger@^5.0.5":
+  version "5.0.10"
+  resolved "https://registry.yarnpkg.com/@confluxproject/logger/-/logger-5.0.10.tgz#c43ea635b37fd08f359bfb580fededf071f53427"
+  integrity sha512-2+JlgHbiv1fbTWrKkbQiTSt55RSVeAASTmPkwhk7Z2CQT/83zihQG9ovkuuDw/u0UZW467hzWZQaopZ6g/DuKg==
 
 "@web3-react/abstract-connector@^6.0.7":
   version "6.0.7"
