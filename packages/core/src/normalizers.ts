@@ -1,5 +1,6 @@
 import { arrayify } from '@confluxproject/bytes'
 import { keccak256 } from '@confluxproject/keccak256'
+import { getAddress } from '@confluxproject/address'
 import invariant from 'tiny-invariant'
 
 export function normalizeChainId(chainId: string | number): number {
@@ -23,6 +24,15 @@ export function isLikeBase32Address(address: string): boolean {
   return /^(cfx(test)?|net\d+):(type\.(null|user|contract|builtin):)?[0123456789abcdefghjkmnprstuvwxyz]{42}$/i.test(
     address
   )
+}
+
+// returns the checksummed address if the address is valid, otherwise returns false
+export function isAddress(value: any): string {
+  try {
+    return getAddress(value)
+  } catch {
+    return ''
+  }
 }
 
 // https://github.com/ethers-io/ethers.js/blob/d9d438a119bb11f8516fc9cf02c534ab3816fcb3/packages/address/src.ts/index.ts

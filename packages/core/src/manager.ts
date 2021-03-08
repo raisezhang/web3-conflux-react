@@ -1,10 +1,12 @@
-import { useReducer, useEffect, useCallback, useRef } from 'react'
+import { useReducer, useEffect, useCallback, useRef, useMemo } from 'react'
 import { ConnectorUpdate, ConnectorEvent } from '@web3-react/types'
 import { AbstractConnector } from '@web3-react/abstract-connector'
+// @ts-ignore
+import { decode, encode } from 'conflux-address-js'
 import warning from 'tiny-warning'
 
 import { Web3ReactManagerReturn } from './types'
-import { normalizeChainId, normalizeAccount } from './normalizers'
+import { normalizeChainId, normalizeAccount, isLikeBase32Address, isAddress } from './normalizers'
 
 class StaleConnectorError extends Error {
   constructor() {
@@ -30,6 +32,11 @@ interface Web3ReactManagerState {
   onError?: (error: Error) => void
 
   error?: Error
+}
+
+interface AddressesType {
+  hex40?: null | string
+  base32: null | string
 }
 
 enum ActionType {
@@ -245,5 +252,29 @@ export function useWeb3ReactManager(): Web3ReactManagerReturn {
     }
   }, [connector, handleUpdate, handleError, handleDeactivate])
 
-  return { connector, provider, chainId, account, activate, setError, deactivate, error }
+  const addresses = useMemo(() => {
+    const result: AddressesType =  {
+      hex40: null,
+      base32: null,
+    }
+    if (!account || !chainId) {
+      return result
+    }
+
+    if (isLikeBase32Address(account)) {
+      result.base32 = account
+      result.hex40 = `0x${decode(account).hexAddress.toString('hex')}`
+    } else {
+      result.hex40 = account
+      const hexBuffer = Buffer.from(account.slice(2), 'hex');
+      result.base32 = encode(hexBuffer, chainId)
+    }
+    result.hex40 = isAddress(result.hex40)
+    return result
+  }, [account, chainId])
+  return { connector, provider, chainId, account: addresses.hex40, accountBase32: addresses.base32, activate, setError, deactivate, error }
+}
+
+export {
+  isLikeBase32Address
 }

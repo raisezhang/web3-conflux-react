@@ -37,6 +37,7 @@ export function createWeb3ReactRoot(key: string): (args: Web3ReactProviderArgume
       provider,
       chainId,
       account,
+      accountBase32,
 
       activate,
       setError,
@@ -59,6 +60,7 @@ export function createWeb3ReactRoot(key: string): (args: Web3ReactProviderArgume
       library,
       chainId,
       account,
+      accountBase32,
 
       activate,
       setError,

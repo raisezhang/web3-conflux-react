@@ -11,6 +11,7 @@ export interface Web3ReactManagerReturn extends Web3ReactManagerFunctions {
   provider?: any
   chainId?: number
   account?: null | string
+  accountBase32?: null | string
 
   error?: Error
 }
@@ -20,6 +21,7 @@ export interface Web3ReactContextInterface<T = any> extends Web3ReactManagerFunc
   library?: T
   chainId?: number
   account?: null | string
+  accountBase32?: null | string
 
   active: boolean
   error?: Error
