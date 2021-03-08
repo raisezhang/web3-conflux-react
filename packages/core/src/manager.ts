@@ -271,7 +271,3 @@ export function useWeb3ReactManager(): Web3ReactManagerReturn {
   }, [account, chainId])
   return { connector, provider, chainId, account: addresses.hex40, accountBase32: addresses.base32, activate, setError, deactivate, error }
 }
-
-export {
-  isLikeBase32Address
-}
