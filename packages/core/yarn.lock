@@ -2,54 +2,54 @@
 # yarn lockfile v1
 
 
-"@confluxproject/address@^5.0.35":
-  version "5.0.35"
-  resolved "https://registry.yarnpkg.com/@confluxproject/address/-/address-5.0.35.tgz#93d06139f12ded0f4ac0b4dd0393e59b0c99fd65"
-  integrity sha512-8VZC9pCneT9SOjg5YwQQ9unrZpp37z1CRUzHQz6KTxD1LcoOPQFBon1Lw4o31Kh9PIGYXqcfsh7rblc1mbjawA==
+"@confluxproject/address@^5.0.36":
+  version "5.0.36"
+  resolved "https://registry.yarnpkg.com/@confluxproject/address/-/address-5.0.36.tgz#829cc3d05827c516ccf65fdfb1572d9409f636a2"
+  integrity sha512-TSYtfVU79fpkraaiJkrsg74cRhChrQN/cWS08+pobGx33Ny3gOpiasixKhLzRQ3AXvJdmpMq6nzwLrrg7m4aKg==
   dependencies:
-    "@confluxproject/bignumber" "^5.0.35"
-    "@confluxproject/bytes" "^5.0.35"
-    "@confluxproject/keccak256" "^5.0.35"
-    "@confluxproject/logger" "^5.0.35"
-    "@confluxproject/rlp" "^5.0.35"
+    "@confluxproject/bignumber" "^5.0.36"
+    "@confluxproject/bytes" "^5.0.36"
+    "@confluxproject/keccak256" "^5.0.36"
+    "@confluxproject/logger" "^5.0.36"
+    "@confluxproject/rlp" "^5.0.36"
     conflux-address-js "^1.0.4"
 
-"@confluxproject/bignumber@^5.0.35":
-  version "5.0.35"
-  resolved "https://registry.yarnpkg.com/@confluxproject/bignumber/-/bignumber-5.0.35.tgz#c29bff9a4842bd6ee18ea690a6ba0a5d0fb36651"
-  integrity sha512-Q2OhbuchPaVH+PwYxFrYaCBmPLalasTXAtxkaKBTDbRqhwYZcAYRxE13MXOlsHmHXcoRN+k5pjOUxCP/29FBnA==
+"@confluxproject/bignumber@^5.0.36":
+  version "5.0.36"
+  resolved "https://registry.yarnpkg.com/@confluxproject/bignumber/-/bignumber-5.0.36.tgz#bab81f21d54d89e08b7e06d7445eea22bf66c08e"
+  integrity sha512-WOyfuQe+AuwbrZGfaReqH5GBXTM4yhXwdfuCd/AMASlB5zy6H1ht/nFqW7sIJS05W0jNxWbLediJlmd0FRinTg==
   dependencies:
-    "@confluxproject/bytes" "^5.0.35"
-    "@confluxproject/logger" "^5.0.35"
+    "@confluxproject/bytes" "^5.0.36"
+    "@confluxproject/logger" "^5.0.36"
     bn.js "^4.4.0"
 
-"@confluxproject/bytes@^5.0.35":
-  version "5.0.35"
-  resolved "https://registry.yarnpkg.com/@confluxproject/bytes/-/bytes-5.0.35.tgz#ae37dba1e20cc52b58f2c00712eddcb41b175bc5"
-  integrity sha512-exju35nDAiZ35xndRAGuQjyiheVZ1Jnse3pBwY+ePF2iDWRIAl8Mvqh54qg0ZP9FWLeOBAqmJTqnFdTwNs/yEA==
+"@confluxproject/bytes@^5.0.36":
+  version "5.0.36"
+  resolved "https://registry.yarnpkg.com/@confluxproject/bytes/-/bytes-5.0.36.tgz#e73ba7e5cbe7deabc02672007a321f06d1ddf0e5"
+  integrity sha512-abP5BnyKp07bEpWlPDPrzYGkrszMkgdtsldVWyydKcyVNdzqDuHP8EH5qW1HJLUG+QA9OFrK47L8plMHHLRYGw==
   dependencies:
-    "@confluxproject/logger" "^5.0.35"
+    "@confluxproject/logger" "^5.0.36"
 
-"@confluxproject/keccak256@^5.0.35":
-  version "5.0.35"
-  resolved "https://registry.yarnpkg.com/@confluxproject/keccak256/-/keccak256-5.0.35.tgz#a606183b4cfd87779cfe28986d23891848e934da"
-  integrity sha512-99DJNHe9nIL0V+SN/DUT+uS6C7joY1l5Ky+T8NJIq2JuPx+do4iE807nLSHnoTLu/nDHdxtP19Qj9u5TQ4Goag==
+"@confluxproject/keccak256@^5.0.36":
+  version "5.0.36"
+  resolved "https://registry.yarnpkg.com/@confluxproject/keccak256/-/keccak256-5.0.36.tgz#8d3901adb39a03b8d96dbf6a8a231ef1b35d0ba4"
+  integrity sha512-2goeT/BmF4LRZon/Br/LhgoHTADkTyHCm0bbIFNKhllYdp6SB8EIZAkwtjCLDWHQ6T5nm9yRKXnU3a7fRvG8Sg==
   dependencies:
-    "@confluxproject/bytes" "^5.0.35"
+    "@confluxproject/bytes" "^5.0.36"
     js-sha3 "0.5.7"
 
-"@confluxproject/logger@^5.0.35":
-  version "5.0.35"
-  resolved "https://registry.yarnpkg.com/@confluxproject/logger/-/logger-5.0.35.tgz#2fa21fdafad31b295fde8b00137b74dd355d46da"
-  integrity sha512-jWM6ZpXEQRNROuv2Q/iLgS+6g4pLmrtyMex2M6hCBuwztQHJR0Tq6EjWoIchXYV88SwfTcqwLD+e/J0B7VVotA==
+"@confluxproject/logger@^5.0.36":
+  version "5.0.36"
+  resolved "https://registry.yarnpkg.com/@confluxproject/logger/-/logger-5.0.36.tgz#e219bcc436f4c85eb6a6fd49acc68a6e1096283b"
+  integrity sha512-TjN4RqePBS2WreTH/kSfRvXRb2rI81JIc4YVS7CK48a6NT7U1pOpku/gNwtc/zmp/NtHbZy65x0v9wh2tpQWkw==
 
-"@confluxproject/rlp@^5.0.35":
-  version "5.0.35"
-  resolved "https://registry.yarnpkg.com/@confluxproject/rlp/-/rlp-5.0.35.tgz#739d979ff9434897d5fc3023cbf02278d850c242"
-  integrity sha512-9+5nXpo6Quum5MJBt5Lf4g+ahf51xhg7v+ZMpJRRj+TEDB0gEd33TGEgE9UBF7Aj/t32perSaHxxQGEkWV2sVw==
+"@confluxproject/rlp@^5.0.36":
+  version "5.0.36"
+  resolved "https://registry.yarnpkg.com/@confluxproject/rlp/-/rlp-5.0.36.tgz#c8611cf7d03f6737ba80123dec013d267738ab23"
+  integrity sha512-EiXuhcSYztUxSXqYuJOH91puzpO8l5cA6q+PM8oWJ/eRRq2C+h23PjmHVjPmN11VkmdlaO+JH0bJfJ8gvrM/jg==
   dependencies:
-    "@confluxproject/bytes" "^5.0.35"
-    "@confluxproject/logger" "^5.0.35"
+    "@confluxproject/bytes" "^5.0.36"
+    "@confluxproject/logger" "^5.0.36"
 
 "@web3-react/abstract-connector@^6.0.7":
   version "6.0.7"

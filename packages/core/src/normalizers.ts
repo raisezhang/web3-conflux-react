@@ -1,6 +1,6 @@
 import { arrayify } from '@confluxproject/bytes'
 import { keccak256 } from '@confluxproject/keccak256'
-import { getAddress } from '@confluxproject/address'
+import { isLikeBase32Address } from '@confluxproject/address'
 import invariant from 'tiny-invariant'
 
 export function normalizeChainId(chainId: string | number): number {
@@ -16,22 +16,6 @@ export function normalizeChainId(chainId: string | number): number {
   } else {
     invariant(Number.isInteger(chainId), `chainId ${chainId} is not an integer`)
     return chainId
-  }
-}
-
-export function isLikeBase32Address(address: string): boolean {
-  // this won't return false when there's net1029, net1
-  return /^(cfx(test)?|net\d+):(type\.(null|user|contract|builtin):)?[0123456789abcdefghjkmnprstuvwxyz]{42}$/i.test(
-    address
-  )
-}
-
-// returns the checksummed address if the address is valid, otherwise returns false
-export function isAddress(value: any): string {
-  try {
-    return getAddress(value)
-  } catch {
-    return ''
   }
 }
 

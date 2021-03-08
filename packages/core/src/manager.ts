@@ -1,12 +1,11 @@
 import { useReducer, useEffect, useCallback, useRef, useMemo } from 'react'
 import { ConnectorUpdate, ConnectorEvent } from '@web3-react/types'
 import { AbstractConnector } from '@web3-react/abstract-connector'
-// @ts-ignore
-import { decode, encode } from 'conflux-address-js'
+import { getBase32AddressFromHex40, getHex40AddressFromBase32, isLikeBase32Address } from '@confluxproject/address'
 import warning from 'tiny-warning'
 
 import { Web3ReactManagerReturn } from './types'
-import { normalizeChainId, normalizeAccount, isLikeBase32Address, isAddress } from './normalizers'
+import { normalizeChainId, normalizeAccount } from './normalizers'
 
 class StaleConnectorError extends Error {
   constructor() {
@@ -263,13 +262,11 @@ export function useWeb3ReactManager(): Web3ReactManagerReturn {
 
     if (isLikeBase32Address(account)) {
       result.base32 = account
-      result.hex40 = `0x${decode(account).hexAddress.toString('hex')}`
+      result.hex40 = getHex40AddressFromBase32(account)
     } else {
       result.hex40 = account
-      const hexBuffer = Buffer.from(account.slice(2), 'hex');
-      result.base32 = encode(hexBuffer, chainId)
+      result.base32 = getBase32AddressFromHex40(account, chainId)
     }
-    result.hex40 = isAddress(result.hex40)
     return result
   }, [account, chainId])
   return { connector, provider, chainId, account: addresses.hex40, accountBase32: addresses.base32, activate, setError, deactivate, error }
