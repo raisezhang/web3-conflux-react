@@ -1,5 +1,5 @@
 interface Conflux {
-  send: unknown
+  request: unknown
   enable: () => Promise<string[]>
   on?: (method: string, listener: (...args: any[]) => void) => void
   removeListener?: (method: string, listener: (...args: any[]) => void) => void
@@ -7,7 +7,6 @@ interface Conflux {
 
 declare interface Window {
   conflux?: Conflux
-  confluxJS?: any
 }
 
 declare const __DEV__: boolean
