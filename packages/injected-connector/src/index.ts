@@ -82,17 +82,17 @@ export class InjectedConnector extends AbstractConnector {
     //   ;(window.conflux as any).autoRefreshOnNetworkChange = false
     // }
 
-    // try to activate + get account via cfx_accounts
+    // try to activate + get account via cfx_requestAccounts
     let account
     try {
-      account = await (window.conflux.request as SendOld)({ method: 'cfx_accounts' }).then(
+      account = await (window.conflux.request as SendOld)({ method: 'cfx_requestAccounts' }).then(
         sendReturn => parseSendReturn(sendReturn)[0]
       )
     } catch (error) {
       if ((error as any).code === 4001) {
         throw new UserRejectedRequestError()
       }
-      warning(false, 'cfx_accounts was unsuccessful, falling back to enable')
+      warning(false, 'cfx_requestAccounts was unsuccessful, falling back to enable')
     }
 
     // if unsuccessful, try enable
