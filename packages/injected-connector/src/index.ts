@@ -54,7 +54,7 @@ export class InjectedConnector extends AbstractConnector {
 
   private handleClose(code: number, reason: string): void {
     if (__DEV__) {
-      console.log("Handling 'close' event with payload", code, reason)
+      console.log("Handling 'disconnect' event with payload", code, reason)
     }
     this.emitDeactivate()
   }
@@ -74,7 +74,7 @@ export class InjectedConnector extends AbstractConnector {
     if (window.conflux.on) {
       window.conflux.on('chainChanged', this.handleChainChanged)
       window.conflux.on('accountsChanged', this.handleAccountsChanged)
-      window.conflux.on('close', this.handleClose)
+      window.conflux.on('disconnect', this.handleClose)
       // window.conflux.on('networkChanged', this.handleNetworkChanged)
     }
 
@@ -167,7 +167,7 @@ export class InjectedConnector extends AbstractConnector {
     if (window.conflux && window.conflux.removeListener) {
       window.conflux.removeListener('chainChanged', this.handleChainChanged)
       window.conflux.removeListener('accountsChanged', this.handleAccountsChanged)
-      window.conflux.removeListener('close', this.handleClose)
+      window.conflux.removeListener('disconnect', this.handleClose)
       // window.conflux.removeListener('networkChanged', this.handleNetworkChanged)
     }
   }
